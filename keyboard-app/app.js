@@ -5,8 +5,8 @@ let typedText = "";
 
 keys.forEach((key) => {
   key.addEventListener("click", () => {
-    letter = key.getAttribute("value");
+    letter = key.getAttribute("value").toLowerCase();
     typedText += letter;
-    display.innerHTML = typedText;
+    display.value = typedText;
   });
 });
