@@ -60,10 +60,6 @@ function generatePassword(
     );
     password.push(String.fromCharCode(characterCodes[i]));
   }
-
-  console.log(charCodes);
-  console.log("higher " + higherCaseCharCodes);
-  //   console.log(password.join(""));
   return password.join("");
 }
 
