@@ -47,9 +47,12 @@ function getRandomFox() {
 
 function getRandomDog() {
   console.log("getRandomDog called");
-  const httpUrl = "https://random.dog/";
-  fetch(httpUrl).then((response) => console.log(response));
-  // .then((responseData) => console.log(responseData));
+  const httpUrl = "https://random.dog/woof.json";
+  fetch(httpUrl)
+    .then((response) => response.json())
+    .then((responseData) => {
+      ctnDog.innerHTML = `<img src=${responseData.url}></img>`;
+    });
 }
 
 function getRandomDuck() {
