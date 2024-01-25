@@ -42,7 +42,7 @@ const ball = {
   //   yP: canvasEl.height / 2,
   radius: 10,
   speed: 7,
-  xV: 5,
+  xV: 7,
   yV: 0,
   color: "white",
 };
@@ -177,6 +177,9 @@ function resetBall() {
   ball.speed = 7;
   ball.xV = 5;
   ball.yV = 0;
+
+  console.log("AI Score: ", playerPaddleAI.score);
+  console.log("Human Score: ", playerPaddleRI.score);
 }
 //The Everything Manager Function
 function everythingManager() {
@@ -213,7 +216,7 @@ function everythingManager() {
     let direction = ball.xP < canvasEl.width / 2 ? 1 : -1;
     //updating the velocity when the ball hit any paddle
     ball.xV = direction * ball.speed * Math.cos(bounceAngle);
-    ball.yV = direction * ball.speed * Math.sin(bounceAngle);
+    ball.yV = ball.speed * Math.sin(bounceAngle);
 
     //After each bounce back, the speed of the ball should be increased
 
